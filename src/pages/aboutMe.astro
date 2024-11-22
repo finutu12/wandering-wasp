@@ -1,0 +1,174 @@
+---
+import Navbar from '../components/navbar.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Eduard Voicescu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="module" src="../assets/scrollAnimation.js"></script>
+</head>
+<body>
+  <Navbar />
+  <main class="about-me">
+    <section class="profile">
+      <div class="image-container fade-in">
+        <img src="../assets/eduard_picture.jpg" alt="Eduard Voicescu" />
+      </div>
+      <div class="info fade-in">
+        <h1 class="fade-in">Eduard Voicescu</h1>
+        <p class="fade-in"><strong>Age:</strong> 19.85</p>
+        <p class="fade-in"><strong>Nationality:</strong> Romanian</p>
+        <p class="fade-in"><strong>Hobbies:</strong> Sports, Art, Music</p>
+        <p class="fade-in"><strong>Languages:</strong> Romanian (Native), English (B1-B2), German (B1-B2)</p>
+      </div>
+    </section>
+
+    <section class="experiences">
+      <h2 class="fade-in">My Journey</h2>
+      <p class="fade-in">
+        Since I was in middle school, I was always the best when it came to computers. I spent most of my time playing video games, which sparked my interest in technology. My passion for tech led me to obtain a Cisco certificate and hone my skills using platforms like Codewars. Over time, I realized how much I enjoyed coding and problem-solving.
+      </p>
+      <p class="fade-in">
+        I’ve worked on many school projects, which you can find on my <a href="https://github.com/finutu12?tab=repositories" target="_blank">GitHub</a>. In these projects, I was primarily the designer, contributing to the creative direction and interface design of the work. My main technical skills include programming in C#, Java, and Python.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2 class="fade-in">Skills & Expertise</h2>
+      <p class="fade-in">
+        I’m proficient in C#, Java, and Python, and I always look for opportunities to improve my programming abilities. Beyond technical skills, I’ve learned valuable soft skills, especially through sports like volleyball, where I developed strong communication and teamwork abilities. Skiing has taught me how to face my fears and push myself to try new tricks, and art has helped me unlock my creative side.
+      </p>
+      <p class="fade-in">
+        I am always curious, and I am driven by seeing tangible improvement in whatever I do. Whether it's automating tasks or improving my skills, I am determined to keep moving forward and never stop growing.
+      </p>
+    </section>
+
+    <section class="future">
+      <h2 class="fade-in">Future Goals</h2>
+      <p class="fade-in">
+        Looking ahead, my primary goal is to become highly skilled at programming and automation. I want to automate various activities around my house and on my PC. Over time, I hope to make everything look sleek and professional. I also plan on improving my German skills so that I can better communicate with people from different backgrounds and expand my opportunities.
+      </p>
+    </section>
+
+    <section class="inspiration">
+      <h2 class="fade-in">What Inspires Me</h2>
+      <p class="fade-in">
+        One of the greatest inspirations in my life is my brother. From a young age, I always tried to one-up him, which pushed me to keep improving and striving for success. His example taught me the importance of perseverance and always challenging myself to do better.
+      </p>
+      <blockquote class="fade-in">
+        "The only limit to our realization of tomorrow is our doubts of today." – Franklin D. Roosevelt
+      </blockquote>
+    </section>
+  </main>
+
+  <style>
+    /* Body and Layout */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .about-me {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .image-container {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2.2em;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    strong {
+      font-weight: 500;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #444;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-left: 5px solid #888;
+      margin-top: 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .about-me {
+        padding: 20px;
+      }
+      .profile {
+        flex-direction: column;
+        align-items: center;
+      }
+      .image-container {
+        width: 120px;
+        height: 120px;
+      }
+      .info {
+        text-align: center;
+      }
+    }
+  </style>
+</body>
+</html>

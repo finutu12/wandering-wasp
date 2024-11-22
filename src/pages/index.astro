@@ -1,184 +1,117 @@
 ---
-const title = "Welcome to My Portfolio";
+import Navbar from '../components/navbar.astro';
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <style>
-      body {
-        font-family: "Arial", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        overflow: hidden;
-      }
-
-      header {
-        background-color: #333;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        z-index: 10;
-        position: relative;
-      }
-
-      header h1 {
-        margin: 0;
-        font-size: 2.5em;
-        transition: transform 0.3s ease;
-      }
-
-      header p {
-        margin: 0.5em 0;
-        font-size: 1.2em;
-        opacity: 0;
-        animation: fadeIn 1s forwards 0.5s;
-      }
-
-      nav ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      nav ul li {
-        display: inline-block;
-        margin: 0 10px;
-      }
-
-      nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.2em;
-        transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease;
-      }
-
-      nav ul li a::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 2px;
-        background-color: #ff9900;
-        transition: width 0.3s ease;
-      }
-
-      nav ul li a:hover {
-        transform: scale(1.1);
-        color: #ff9900;
-      }
-
-      nav ul li a:hover::after {
-        width: 100%;
-      }
-
-      footer {
-        text-align: center;
-        padding: 10px;
-        background-color: #333;
-        color: white;
-      }
-
-      footer a {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        text-decoration: underline;
-      }
-
-      /* Mouse move effect */
-      .moving-background {
-        position: absolute;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        pointer-events: none;
-        transition: transform 0.1s ease-out;
-        opacity: 0.6;
-      }
-
-      /* Backgrounds with different colors for visual effect */
-      .moving-background:nth-child(1) {
-        background-color: rgba(255, 153, 0, 0.6);
-      }
-
-      .moving-background:nth-child(2) {
-        background-color: rgba(0, 255, 255, 0.6);
-      }
-
-      .moving-background:nth-child(3) {
-        background-color: rgba(255, 0, 255, 0.6);
-      }
-
-      .moving-background:nth-child(4) {
-        background-color: rgba(255, 255, 0, 0.6);
-      }
-
-      /* Fade in effect on page load */
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Mouse Follow Effect -->
-    <div class="moving-background"></div>
-    <div class="moving-background"></div>
-    <div class="moving-background"></div>
-    <div class="moving-background"></div>
-
-    <header>
-      <h1>Welcome to My Portfolio</h1>
-      <p>Here are some of the projects I have worked on.</p>
-      <nav>
-        <ul>
-          <li><a href="/projects">View My Projects</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <footer>
-      <p>
-        Created with Astro - <a href="https://astro.build">Visit Astro</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edu's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <Navbar />
+  <main class="dashboard">
+    <section class="intro">
+      <h1 class="fade-in">Welcome to My Portfolio</h1>
+      <p class="fade-in">
+        This site offers an insight into my past achievements and projects. It is not only a showcase of my skills but also a reflection of my personal development and visions for the future.
       </p>
-    </footer>
+      <p class="fade-in">
+        My goal is to present myself in the best possible light – as a dedicated individual who grows with passion through challenges and is always seeking new ways to improve and evolve.
+      </p>
+    </section>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const movingBackgrounds = document.querySelectorAll(
-          ".moving-background"
-        );
+    <section class="overview">
+      <h2 class="fade-in">Achievements & Projects</h2>
+      <p class="fade-in">
+        Here, you will find an overview of my accomplishments, including certifications and badges that emphasize my expertise in various fields.
+      </p>
+      <p class="fade-in">
+        In the Projects section, I provide a detailed look at both my completed and ongoing projects. In addition to text descriptions, I’ve included images and links to corresponding code repositories, allowing you to explore my work more thoroughly.
+      </p>
+    </section>
 
-        if (movingBackgrounds.length > 0) {
-          document.addEventListener("mousemove", (e) => {
-            // Get mouse position
-            const x = e.clientX;
-            const y = e.clientY;
+    <section class="vision">
+      <h2 class="fade-in">Vision & Inspiration</h2>
+      <p class="fade-in">
+        The ideas I share here reflect what truly matters in life: striving for excellence, committing to continuous improvement, and embracing challenges as opportunities.
+      </p>
+      <p class="fade-in">
+        This portfolio not only represents my journey so far, but also invites you to explore new horizons together.
+      </p>
+    </section>
+  </main>
 
-            // Update the position for each of the 4 background elements
-            movingBackgrounds.forEach((bg, index) => {
-              const bgElement = bg as HTMLElement; // Cast to HTMLElement
-              const offsetX = index * 10;  // Offset each background slightly
-              const offsetY = index * 10;  // Offset each background slightly
+  <style>
+    /* Overall Layout */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .dashboard {
+      padding: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-              // Position the background elements around the mouse in a target-like effect
-              bgElement.style.transform = `translate(${x - 40 + offsetX}px, ${y - 40 + offsetY}px)`;
-            });
-          });
-        }
-      });
-    </script>
-  </body>
+    /* Section Styles */
+    section {
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 3em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 2em;
+      color: #444;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    /* Fade-in Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .dashboard {
+        padding: 20px;
+        margin: 10px;
+      }
+      h1 {
+        font-size: 2.5em;
+      }
+      h2 {
+        font-size: 1.8em;
+      }
+      p {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</body>
 </html>
