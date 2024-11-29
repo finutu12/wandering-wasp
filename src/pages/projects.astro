@@ -1,18 +1,167 @@
 ---
 import Navbar from '../components/navbar.astro';
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p.description {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .project {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 90%;
+      max-width: 1600px;
+      text-align: center;
+    }
+
+    .project img {
+      max-width: 100%; /* Prevent the image from overflowing its container */
+      height: auto;    /* Maintain aspect ratio */
+      display: block;  /* Avoid inline-block extra space below the image */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-description {
+      padding: 15px;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .project-link {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 1rem;
+      display: inline-block;
+      margin-top: 10px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .project-link:hover {
+      color: #0056b3;
+      transform: scale(1.1);
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p.description {
+        font-size: 1rem;
+      }
+
+      .project {
+        width: 95%;
+      }
+    }
+  </style>
 </head>
 <body>
   <Navbar />
   <main>
-    <h1>Projects</h1>
-    <p>Here, I'll showcase my projects. Stay tuned!</p>
+    <h1 class="fade-in">Projects</h1>
+    <p class="description fade-in">Explore my projects below. Click on any to learn more!</p>
+    <div class="project-list fade-in">
+      <!-- Example Project 1 -->
+      <div class="project", style="background-color: Black;">
+        <img src="/AnonyChat.png" alt="AnonyChat">
+        <div class="project-description">
+          <h2 class="project-title", style="color:white">AnonyChat</h2>
+          <p style="color:white">Small solo project, where you chat with random people. Basically omegle without camera</p>
+          <a href="https://github.com/finutu12/AnonyChat.git" target="_blank" class="project-link">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Example Project 2 -->
+      <div class="project", style="background-color: rgb(207, 207, 207);">
+        <img src="/Stellar.gif" alt="Stellar">
+        <div class="project-description">
+          <h2 class="project-title">Stellar</h2>
+          <p>Project of 4 people. Tr1olll, DaniTheWiz, AndreasSchwaiger and xXtomtoXx. A simulation of the years we spent at HTL. Sadly it has been abandoned and will never be finished</p>
+          <a href="https://github.com/xXtomtoXx/Stellar.git" target="_blank" class="project-link">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Example Project 3 -->
+      <div class="project", style="background-color: rgb(6, 82, 65);">
+        <img src="/mBot.png" alt="mBot", style="max-width: 40%;">
+        <div class="project-description">
+          <h2 class="project-title", style="color:white">mBot</h2>
+          <p style="color:white">Remote controlling of a robot using an API. Another project made by a group of 4 developers. sebastiankrallinger, fabianscharfetter69, Tr1olll, philippkirchtag.</p>
+          <a href="https://github.com/sebastiankrallinger/SYP_GRUPPE_3_2024.git" target="_blank" class="project-link">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Example Project 4 -->
+      <div class="project", style="background-color: rgb(149, 252, 162);">
+        <img src="/mBot.png" alt="CannaBase", style="max-width: 40%;">
+        <div class="project-description">
+          <h2 class="project-title", style="color:rgb(0, 0, 0)">CannaBase</h2>
+          <p style="color:rgb(0, 0, 0)">Ongoing project made by xXtomtoXx and Tr1olll. This project will be our last work done at the HTL, so it must be briliant</p>
+          <a href="https://github.com/xXtomtoXx/CannaBase.git" target="_blank" class="project-link">Learn More</a>
+        </div>
+      </div>
+    </div>
   </main>
 </body>
 </html>
